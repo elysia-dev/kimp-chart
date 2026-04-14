@@ -1,0 +1,10 @@
+node_modules
+dist
+public/candle.js
+public/candle.js.map
+.env
+
+# Tooling state
+.claude/
+.omc/
+state/

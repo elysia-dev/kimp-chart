@@ -1,0 +1,44 @@
+{
+  "name": "kimp-chart-only",
+  "version": "1.0.0",
+  "description": "Kimp chart visualization server",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "pnpm build:client && prisma generate && tsc",
+    "build:client": "tsx scripts/build-client.ts",
+    "build:client:watch": "tsx scripts/build-client.ts --watch",
+    "start": "node dist/index.js",
+    "dev": "pnpm build:client && prisma generate && tsx src/index.ts",
+    "db:push": "prisma db push",
+    "db:generate": "prisma generate",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "prisma": {
+    "schema": "prisma/schema.prisma"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.17.1",
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "axios": "^1.13.2",
+    "dotenv": "^17.2.3",
+    "esbuild": "^0.27.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "lightweight-charts": "^5.1.0",
+    "moment": "^2.30.1",
+    "moment-timezone": "^0.6.0",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.10.1",
+    "@types/uuid": "^11.0.0",
+    "prisma": "^5.22.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
