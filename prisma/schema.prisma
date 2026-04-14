@@ -15,6 +15,27 @@ model KimpCandle1m {
   close     Decimal  @db.Decimal(10, 4)
   createdAt DateTime @default(now())
 
-  @@index([time])
   @@map("kimp_candle_1m")
+}
+
+model KimpCandle1h {
+  time      DateTime @id
+  open      Decimal  @db.Decimal(10, 4)
+  high      Decimal  @db.Decimal(10, 4)
+  low       Decimal  @db.Decimal(10, 4)
+  close     Decimal  @db.Decimal(10, 4)
+  createdAt DateTime @default(now())
+
+  @@map("kimp_candle_1h")
+}
+
+model KimpCandle1d {
+  time      DateTime @id
+  open      Decimal  @db.Decimal(10, 4)
+  high      Decimal  @db.Decimal(10, 4)
+  low       Decimal  @db.Decimal(10, 4)
+  close     Decimal  @db.Decimal(10, 4)
+  createdAt DateTime @default(now())
+
+  @@map("kimp_candle_1d")
 }
