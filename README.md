@@ -15,31 +15,16 @@ pnpm install
 # 2) .env 파일에 DATABASE_URL + SwitchOne 자격증명 입력
 cp .env.example .env
 
-# 3) Postgres 스키마 푸시 (kimp_candle_1m 테이블 생성)
-pnpm db:push
-
-# 4) 개발 서버 기동
+# 3) 개발 서버 기동
 pnpm dev
 ```
 
-## 환경변수
-
-| 변수 | 설명 | 기본값 |
-|------|------|--------|
-| PORT | 서버 포트 | 3000 |
-| POLLING_INTERVAL | 가격 폴링 주기 (ms) | 5000 |
-| DATABASE_URL | Postgres 연결 문자열 | (필수) |
-| SWITCHONE_HOST | SwitchOne API 호스트 | https://api.switchwon.com |
-| SWITCHONE_CLIENT_ID | SwitchOne 클라이언트 ID | - |
-| SWITCHONE_SECRET_KEY | SwitchOne 시크릿 키 | - |
-| DEBUG_PAUSE_POLLER | 폴러 일시정지 (`1` 설정 시) | - |
-
 ## 엔드포인트
 
-| 경로 | 설명 |
-|------|------|
-| GET /health | 헬스체크 |
-| GET /candle | 차트 HTML 페이지 |
+| 경로                                   | 설명                  |
+| -------------------------------------- | --------------------- |
+| GET /health                            | 헬스체크              |
+| GET /candle                            | 차트 HTML 페이지      |
 | GET /api/candles?interval=5m&limit=500 | OHLC 캔들 데이터 JSON |
 
 ### /api/candles 파라미터
